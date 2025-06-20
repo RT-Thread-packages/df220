@@ -4,8 +4,10 @@ Import('rtconfig')
 src   = []
 cwd   = GetCurrentDir()
 
+if GetDepend('PKG_DF220_USING_SENSOR_V1'):
+   src += Glob('mira_df220_sensor_v1.c')
+
 # add df220 src files.
-src += Glob('sensor_mira_df220.c')
 src += Glob('libraries/df220.c')
 
 # add df220 include path.
